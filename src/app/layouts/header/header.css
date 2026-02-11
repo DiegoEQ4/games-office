@@ -1,0 +1,106 @@
+/* Header general */
+.header {
+  background: linear-gradient(
+    to right,
+    var(--color-card),   /* color más intenso para el borde del header */
+    var(--color-fondo),  /* color principal de fondo */
+    var(--color-card)    /* color más intenso al final */
+  );
+  color: var(--color-texto);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--color-card); /* borde usando variable */
+  padding: 1.25rem 1.5rem; /* py-5 px-6 */
+}
+
+/* Contenedor centrado */
+.header-container {
+  max-width: 100%; /* equivalente a max-w-7xl */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título */
+.header-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  letter-spacing: 0.1em; /* tracking-widest */
+  text-align: center;
+}
+
+/* Resaltar "GAMES" */
+.highlight {
+  color: var(--color-cyan); /* usando variable */
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+/* Contenedor del menú de paletas */
+.palette-menu {
+  position: relative;
+  margin-left: 1rem;
+}
+
+/* Botón del menú */
+.palette-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-texto);
+}
+
+/* Lista desplegable */
+.palette-dropdown {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: var(--color-card);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  min-width: 160px;
+  z-index: 50;
+}
+
+/* Mostrar dropdown */
+.palette-dropdown.show {
+  display: block;
+}
+
+/* Item del dropdown */
+.palette-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.palette-dropdown li:hover {
+  background-color: var(--color-cyan-hover);
+}
+
+/* Icono de color */
+.color-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+/* Nombre del color */
+.color-name {
+  font-weight: 500;
+  color: var(--color-texto);
+}

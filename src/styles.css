@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);/* Fondo azul oscuro, mismo tono que antes */
+  color: var(--color-texto);
+  min-height: 100vh;
+}
+
+:root {
+  --color-fondo: #0f172a;
+  --color-card: rgba(30, 41, 59, 0.9);
+  --color-texto: #ffffff;
+  --color-cyan: #1a7ff1;
+  --color-cyan-hover: #3b82f6;
+  --color-texto-sec: #f0f9ff;
+}

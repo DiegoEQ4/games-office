@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="header-container">
+    <h1 class="header-title">
+      <span class="highlight">GAMES</span>OFFICE
+    </h1>
+
+    <!-- Menú de paletas -->
+    <div class="palette-menu">
+      <button class="palette-button" (click)="toggleDropdown()">
+        🎨
+      </button>
+
+      <ul class="palette-dropdown" [class.show]="dropdownOpen">
+        @for (p of paletas; track $index) {
+            <li (click)="guardarPaleta(p.colores)">
+              <span class="color-icon" [style.background-color]="p.colores['color-cyan']"></span>
+              <span class="color-name">{{ p.nombre }}</span>
+            </li>
+        }
+      </ul>
+    </div>
+  </div>
+</header>
