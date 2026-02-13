@@ -1,0 +1,27 @@
+<div class="participants-container">
+
+  @for (p of participants; track $index) {
+    <div class="participant-card">
+
+      <div class="participant-top">
+        <div class="avatar">
+          {{ p.participant.nombreCompleto.charAt(0) }}
+        </div>
+
+        <label class="switch">
+          <input 
+            type="checkbox" 
+            [checked]="p.isActive"
+            (change)="toggleActive(p)">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <h3 class="participant-name">
+        {{ p.participant.nombreCompleto }}
+      </h3>
+
+    </div>
+  }
+
+</div>

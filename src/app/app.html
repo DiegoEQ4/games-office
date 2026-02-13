@@ -2,16 +2,53 @@
   <app-header></app-header>
 
   <main class="main-content">
-    <h2 class="page-title">Grupos Disponibles</h2>
 
-    <div class="groups-container">
-      <!-- Card ejemplo, se puede generar con *ngFor -->
-       @for (grupo of groups; track $index) {
-           <div class="group-card">
-             <h3>{{ grupo.nombre }}</h3>
-             <button (click)="ingresarGrupo(grupo)">Ingresar</button>
-           </div>
-       }
-    </div>
+    @if (!grupoSeleccionado) {
+
+      <h2 class="page-title">Grupos Disponibles</h2>
+
+      <div class="groups-container">
+        @for (grupo of groups; track $index) {
+          <div class="group-card">
+            <h3>{{ grupo.nombre }}</h3>
+            <button (click)="ingresarGrupo(grupo)">Ingresar</button>
+          </div>
+        }
+      </div>
+
+    } @else {
+
+      <h2 class="page-title">
+        {{ grupoSeleccionado.nombre }}
+      </h2>
+
+      <div class="group-actions">
+        @if(showVolver){
+        <button class="back-button" (click)="prev()">
+          ← Volver
+        </button>
+      }
+        
+        @if(stepActual < 2){
+          <button class="next-button" (click)="next()">
+            Siguiente →
+          </button>
+        }
+        </div>
+
+      @switch (stepActual) {
+
+        @case (1) {
+          <app-group [group]="grupoSeleccionado"></app-group>
+        }
+
+        @case (2) {
+          <app-games [group]="grupoSeleccionado" (gameSelected)="listenSelect($event)"></app-games>
+        }
+
+      }
+
+    }
+
   </main>
 </div>

@@ -17,5 +17,14 @@ export class AppService {
   getGroups():Observable<any>{
     return this.httpClient.get(`${this.url}/groups`);
   }
+  getParticipantsByGroup(group:number):Observable<any>{
+    return this.httpClient.get(`${this.url}/asign-group/group/${group}`);
+  }
+  updateParicipantState(id: number, status: boolean):Observable<any>{
+    return this.httpClient.patch(`${this.url}/asign-group/${id}`,{status});
+  }
+  loadImpostor(group:number,config:any):Observable<any>{
+    return this.httpClient.post(`${this.url}/game-impostor/load/${group}`,config);
+  }
 
 }

@@ -93,3 +93,28 @@ body, html {
     font-size: 2.5rem;
   }
 }
+
+.group-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.back-button,
+.next-button {
+  background-color: var(--color-card);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-texto);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover,
+.next-button:hover {
+  background-color: var(--color-cyan);
+  transform: translateY(-2px);
+}

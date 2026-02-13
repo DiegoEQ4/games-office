@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
+  standalone: true,
   selector: 'app-header',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -11,7 +13,7 @@ export class Header {
 
   paletas = [
     {
-      nombre: 'Azul Oscuro',
+      nombre: 'Azul',
       colores: {
         'color-fondo': '#0f172a',
         'color-card': 'rgba(30, 41, 59, 0.9)',
@@ -22,7 +24,7 @@ export class Header {
       }
     },
     {
-      nombre: 'Rosado Pastel',
+      nombre: 'Rosa',
       colores: {
         'color-fondo': '#ffe4e6',
         'color-card': '#ffd6dc',
