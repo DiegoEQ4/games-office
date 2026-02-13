@@ -1,0 +1,39 @@
+@if (!juegoSeleccionado) {
+
+  <div class="games-container">
+
+    @for (game of games; track $index) {
+      <div class="game-card">
+
+        <div class="game-icon">
+          <mat-icon>{{ game.icon }}</mat-icon>
+        </div>
+
+        <h3 class="game-title">
+          {{ game.nombre }}
+        </h3>
+
+        <button class="game-button" (click)="accederJuego(game)">
+          Acceder
+        </button>
+
+      </div>
+    }
+
+  </div>
+
+} @else {
+
+    <button class="back-button" (click)="volverAJuegos()">
+        ← Volver a juegos
+    </button>
+
+    <ng-container
+        *ngComponentOutlet="
+        juegoSeleccionado.component;
+        inputs: juegoSeleccionado.inputs
+        ">
+    </ng-container>
+
+
+}

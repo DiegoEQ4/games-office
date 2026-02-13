@@ -1,0 +1,34 @@
+<div class="config-container">
+
+  <div class="config-card">
+
+    <h3 class="config-title">Configuración</h3>
+
+    <!-- Select dificultad -->
+    <div class="config-field">
+      <label for="dificultad">Dificultad</label>
+      <select id="dificultad" [(ngModel)]="config.dificultad">
+        <option value="facil">Fácil</option>
+        <option value="media">Media</option>
+        <option value="dificil">Difícil</option>
+      </select>
+    </div>
+
+    <!-- Input -->
+    <div class="config-field">
+      <label for="cantidad">Explica tu categoria</label>
+      <input
+        id="cantidad"
+        type="text"
+        [(ngModel)]="config.categoria"
+        placeholder="Cosas,Artistas,Paises"
+      />
+    </div>
+
+    <button class="start-button" (click)="empezar()">
+      EMPEZAR
+    </button>
+
+  </div>
+
+</div>

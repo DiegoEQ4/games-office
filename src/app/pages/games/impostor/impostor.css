@@ -1,0 +1,108 @@
+.stepper-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.player-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-card);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Estilo especial impostor */
+.player-card.impostor {
+  border: 2px solid #f87171;
+  box-shadow: 0 0 15px rgba(248,113,113,0.4);
+}
+
+.player-name {
+  color: var(--color-cyan);   /* mismo color que la palabra */
+  font-size: 1.25rem;            /* más grande */
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+
+.player-role {
+  color: var(--color-texto-sec);
+  margin-bottom: 1rem;
+}
+
+/* Card que se revela */
+.reveal-card {
+  background-color: var(--color-fondo);
+  border: 2px dashed var(--color-cyan);
+  border-radius: .8rem;
+  padding: 2rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal-card:hover {
+  transform: translateY(-2px);
+}
+
+.reveal-card.revealed {
+  border-style: solid;
+}
+
+.word-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-texto);
+}
+
+.impostor-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f87171;
+}
+
+/* botón */
+.next-button {
+  margin-top: 1rem;
+  background-color: var(--color-cyan);
+  color: var(--color-texto);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.next-button:hover {
+  background-color: var(--color-cyan-hover);
+}
+
+.impostor-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.impostor-text {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: rgba(248,113,113,0.15);
+  color: #f87171;
+  letter-spacing: 1px;
+}
+
+.word-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-texto);
+}

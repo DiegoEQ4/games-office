@@ -1,0 +1,74 @@
+
+@if(startGame){
+    <div class="stepper-container">
+    
+      @if (indiceActual < participantes.length) {
+    
+        <div class="player-card">
+    
+          <h3 class="player-name">
+            {{ participantes[indiceActual].nombreCompleto }}
+          </h3>
+    
+          <p class="player-role">
+            Desliza la tarjeta para ver tu palabra
+          </p>
+    
+          <!-- Card deslizable -->
+          <div class="reveal-card"
+               (click)="revelarPalabra()"
+               [class.revealed]="mostrarPalabra">
+    
+            @if (!mostrarPalabra) {
+              <span>Toca para revelar</span>
+            } @else {
+    
+              @if (participantes[indiceActual].esImpostor) {
+                <div class="impostor-wrapper">
+                    <span class="impostor-text">IMPOSTOR</span>
+                    <span class="word-text">
+                    {{ participantes[indiceActual].palabra }}
+                    </span>
+                </div>
+              } @else {
+                <span class="word-text">
+                  {{ participantes[indiceActual].palabra }}
+                </span>
+              }
+    
+            }
+          </div>
+    
+          @if (mostrarPalabra) {
+            <button class="next-button" (click)="siguienteParticipante()">
+              Siguiente →
+            </button>
+          }
+    
+    </div>
+    
+      } @else {
+    
+        <div class="player-card">
+            <h3 class="word-text">INICIO</h3>
+
+            <p class="player-role">
+            <strong class="word-text">
+                {{ jugadorInicial?.nombreCompleto }}
+            </strong>
+            </p>
+
+            <p class="player-role">
+            <strong class="word-text">
+                Hacia {{ direccionInicio }}
+            </strong>
+            </p>
+
+        </div>
+    
+      }
+    
+    </div>
+}@else{
+    <app-config-impostor [group]="group" (start)="startGameEvent($event)" (participants)="participantes = $event"></app-config-impostor>
+}
