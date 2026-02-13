@@ -27,12 +27,12 @@
                 <div class="impostor-wrapper">
                     <span class="impostor-text">IMPOSTOR</span>
                     <span class="word-text">
-                    {{ participantes[indiceActual].palabra }}
+                    {{ participantes[indiceActual].palabra | uppercase  }}
                     </span>
                 </div>
               } @else {
                 <span class="word-text">
-                  {{ participantes[indiceActual].palabra }}
+                  {{ participantes[indiceActual].palabra | uppercase  }}
                 </span>
               }
     

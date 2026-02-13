@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { ConfigImpostor } from '../components/config-impostor/config-impostor';
 import { BidiModule } from "@angular/cdk/bidi";
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-impostor',
   imports: [
     ConfigImpostor,
-    BidiModule
+    BidiModule,
+    UpperCasePipe
 ],
   templateUrl: './impostor.html',
   styleUrl: './impostor.css',
